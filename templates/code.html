@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Snippet</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='prism.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+<body>
+    <pre><code class="language-python" id="code">{{ code }}</code></pre>
+    <button class="copyBtn" onclick="myFunction()"><i class="ri-file-copy-line"></i></button>
+    <script src="{{ url_for('static', filename='prism.js') }}"></script>
+    <script>
+        function myFunction(text) {
+            // Get the text field
+            var copyText = document.getElementById("code").innerText;
+          
+             // Copy the text inside the text field
+            navigator.clipboard.writeText(copyText);
+          
+            // Alert the copied text
+            alert("Code Coppied Successfuly!!");
+          }
+    </script>
+</body>
+</html>
